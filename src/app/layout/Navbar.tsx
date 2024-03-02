@@ -1,4 +1,5 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom'
+import styles from './Navbar.module.css';
 
 export const Navbar = () => {
     const { locationId } = useParams();
@@ -6,16 +7,19 @@ export const Navbar = () => {
     return (
         <>
             <NavLink
+                className={ styles.navlink }
                 to={ `/${ setLocation }` }
             >
                 Location
             </NavLink>
             <NavLink
+                className={ styles.navlink }
                 to={ `/week/${ setLocation }` }
             >
                 Week
             </NavLink>
             <NavLink
+                className={ styles.navlink }
                 to={ `/today/${ setLocation }` }
             >
                 Today

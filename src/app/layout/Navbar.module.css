@@ -1,0 +1,10 @@
+.navlink {
+    border: 1px solid #ffffff;
+    padding: 1.25rem;
+}
+
+@media (prefers-color-scheme: light) {
+    .navlink {
+      border-color: #213547;
+    }
+}
