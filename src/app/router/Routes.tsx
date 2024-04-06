@@ -10,7 +10,7 @@ export const routes: RouteObject[] = [
         element: <App />,
         children: [
             {
-                path: ':locationId',
+                path: ':locationId?',
                 element: <Location />,
             },
             {
@@ -20,7 +20,7 @@ export const routes: RouteObject[] = [
             {
                 path: 'week/:locationId',
                 element: <Week />,
-            }
+            },
         ],
     }
 ];

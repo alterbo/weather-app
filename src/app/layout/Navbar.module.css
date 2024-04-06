@@ -3,8 +3,16 @@
     padding: 1.25rem;
 }
 
+.active {
+  background-color: #ffffff;
+}
+
 @media (prefers-color-scheme: light) {
     .navlink {
       border-color: #213547;
+    }
+
+    .active {
+      background-color: #213547;
     }
 }

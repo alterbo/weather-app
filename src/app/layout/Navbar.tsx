@@ -7,19 +7,19 @@ export const Navbar = () => {
     return (
         <>
             <NavLink
-                className={ styles.navlink }
+                className={({ isActive }) => isActive ? `${styles.navlink} ${styles.active}` : styles.navlink }
                 to={ `/${ setLocation }` }
             >
                 Location
             </NavLink>
             <NavLink
-                className={ styles.navlink }
+                className={({ isActive }) => isActive ? `${styles.navlink} ${styles.active}` : styles.navlink }
                 to={ `/week/${ setLocation }` }
             >
                 Week
             </NavLink>
             <NavLink
-                className={ styles.navlink }
+                className={({ isActive }) => isActive ? `${styles.navlink} ${styles.active}` : styles.navlink }
                 to={ `/today/${ setLocation }` }
             >
                 Today

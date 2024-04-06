@@ -1,3 +1,39 @@
+.image path {
+    fill: none;
+    stroke: darkslategray;
+    width: 100%;
+}
+
+.info {
+    margin-top: auto;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.title {
+    margin-top: 0;
+}
+
+.values {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-around;
+}
+
 .week {
     display: grid;
     grid-template-rows: auto 1fr;

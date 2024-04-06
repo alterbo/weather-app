@@ -42,22 +42,22 @@ export const data = {
         {
             "dt": 1708830000,
             "main": {
-                "temp": 5.55,
-                "feels_like": 2.07,
-                "temp_min": 4.57,
-                "temp_max": 5.55,
-                "pressure": 1016,
-                "sea_level": 1016,
-                "grnd_level": 928,
-                "humidity": 79,
-                "temp_kf": 0.98
+                "temp": 277.96,
+                "feels_like": 274.35,
+                "temp_min": 277.96,
+                "temp_max": 277.96,
+                "pressure": 998,
+                "sea_level": 998,
+                "grnd_level": 913,
+                "humidity": 89,
+                "temp_kf": 0
             },
             "weather": [
                 {
-                    "id": 500,
-                    "main": "Rain",
-                    "description": "light rain",
-                    "icon": "10n"
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04n"
                 }
             ],
             "clouds": {
@@ -81,22 +81,22 @@ export const data = {
         {
             "dt": 1708840800,
             "main": {
-                "temp": 5.24,
-                "feels_like": 1.03,
-                "temp_min": 4.84,
-                "temp_max": 5.24,
-                "pressure": 1015,
-                "sea_level": 1015,
-                "grnd_level": 927,
-                "humidity": 86,
-                "temp_kf": 0.4
+                "temp": 281.06,
+                "feels_like": 280.16,
+                "temp_min": 281.06,
+                "temp_max": 281.06,
+                "pressure": 1023,
+                "sea_level": 1023,
+                "grnd_level": 936,
+                "humidity": 60,
+                "temp_kf": 0
             },
             "weather": [
                 {
-                    "id": 500,
-                    "main": "Rain",
-                    "description": "light rain",
-                    "icon": "10n"
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
                 }
             ],
             "clouds": {
@@ -120,22 +120,22 @@ export const data = {
         {
             "dt": 1708851600,
             "main": {
-                "temp": 6.3,
-                "feels_like": 2.5,
-                "temp_min": 6.3,
-                "temp_max": 6.3,
-                "pressure": 1014,
-                "sea_level": 1014,
-                "grnd_level": 927,
-                "humidity": 95,
+                "temp": 281.06,
+                "feels_like": 280.16,
+                "temp_min": 281.06,
+                "temp_max": 281.06,
+                "pressure": 1023,
+                "sea_level": 1023,
+                "grnd_level": 936,
+                "humidity": 60,
                 "temp_kf": 0
             },
             "weather": [
                 {
-                    "id": 804,
-                    "main": "Clouds",
-                    "description": "overcast clouds",
-                    "icon": "04d"
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
                 }
             ],
             "clouds": {
@@ -156,22 +156,22 @@ export const data = {
         {
             "dt": 1708862400,
             "main": {
-                "temp": 9.15,
-                "feels_like": 5.96,
-                "temp_min": 9.15,
-                "temp_max": 9.15,
-                "pressure": 1012,
-                "sea_level": 1012,
-                "grnd_level": 927,
-                "humidity": 87,
+                "temp": 281.06,
+                "feels_like": 280.16,
+                "temp_min": 281.06,
+                "temp_max": 281.06,
+                "pressure": 1023,
+                "sea_level": 1023,
+                "grnd_level": 936,
+                "humidity": 60,
                 "temp_kf": 0
             },
             "weather": [
                 {
-                    "id": 804,
-                    "main": "Clouds",
-                    "description": "overcast clouds",
-                    "icon": "04d"
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
                 }
             ],
             "clouds": {
@@ -192,22 +192,22 @@ export const data = {
         {
             "dt": 1708873200,
             "main": {
-                "temp": 11.07,
-                "feels_like": 10.24,
-                "temp_min": 11.07,
-                "temp_max": 11.07,
-                "pressure": 1009,
-                "sea_level": 1009,
-                "grnd_level": 924,
-                "humidity": 77,
+                "temp": 281.06,
+                "feels_like": 280.16,
+                "temp_min": 281.06,
+                "temp_max": 281.06,
+                "pressure": 1023,
+                "sea_level": 1023,
+                "grnd_level": 936,
+                "humidity": 60,
                 "temp_kf": 0
             },
             "weather": [
                 {
-                    "id": 804,
-                    "main": "Clouds",
-                    "description": "overcast clouds",
-                    "icon": "04d"
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
                 }
             ],
             "clouds": {

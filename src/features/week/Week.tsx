@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { locations } from '../location/locations';
 import { data } from './week-mock';
 import styles from './Week.module.css';
+import { DayImage } from './DayImage';
 
 export const Week = () => {
     const { locationId } = useParams();
@@ -55,8 +56,8 @@ export const Week = () => {
     groupedForecasts.forEach((dayForecasts, date) => {
         const [maxTemp, minTemp] = getMaxMinTemperature(dayForecasts);
         const dominantWeather = getDominantWeatherCondition(dayForecasts);
-        const weatherIcon = dominantWeather ? `${dominantWeather}.svg` : '';
-        dailyForecasts.push({ date, maxTemp, minTemp, weatherIcon });
+        const weather = dominantWeather;
+        dailyForecasts.push({ date, maxTemp, minTemp, weather });
     });
 
     dailyForecasts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
@@ -64,18 +65,23 @@ export const Week = () => {
 
     return (
         <div className={ styles.week }>
-            <h1>
+            <h1 className={ styles.title }>
                 { 
                     `Week in ${ location.label ?? '' }`
                 }
             </h1>
-            <ul>
+            <ul className={ styles.list }>
                 {
-                    dailyForecasts.map(({ date, maxTemp, minTemp, weatherIcon }) => (
-                        <li key={date}>
-                            <div>Date:{date}</div>
-                            <div>Max: {maxTemp}&#176;C</div>
-                            <div>Min: {minTemp}&#176;C</div>
+                    dailyForecasts.map(({ date, maxTemp, minTemp, weather }) => (
+                        <li className={ styles.item } key={ date }>
+                            <DayImage name={ weather } />
+                            <div className={ styles.info } >
+                                <p className={ styles.values }>
+                                    <span>{ minTemp }&#176;</span>
+                                    <span>{ maxTemp }&#176;</span>
+                                </p>
+                                <p>{ date }</p>
+                            </div>
                         </li>
                     ))
                 }

@@ -8,7 +8,6 @@ interface Props {
 }
 
 export const LocationImage = ({ name }: Props) => {
-
     const imageMap: { [key: string]: JSX.Element } = {
         beach: <Beach />,
         center: <Center />,

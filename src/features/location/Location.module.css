@@ -14,15 +14,6 @@
     padding: 1.25rem;
     text-align: center;
 }
-    
-@media (prefers-color-scheme: light) {
-    .link {
-        border-color: #213547;
-    }
-    .image {
-        border-color: #c9c9c9;
-    }
-}
 
 .group {
     animation-duration: 10000ms;
@@ -54,6 +45,15 @@
     fill: none;
     stroke: lightgray;
     width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+    .link {
+        border-color: #213547;
+    }
+    .image {
+        border-color: #c9c9c9;
+    }
 }
 
 @keyframes slide {
