@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { locations } from '../location/locations';
 import { data } from './week-mock';
 import styles from './Week.module.css';
 import { DayImage } from './DayImage';
+import { Bevel } from '../../app/layout/Bevel';
 
 export const Week = () => {
     const { locationId } = useParams();
@@ -12,8 +12,6 @@ export const Week = () => {
 
     // const { lat, lon } = location;
     const week = data.list;
-
-    console.log('week', week);
 
     const groupForecastsByDay = (forecasts: Forecast[]): Map<string, Forecast[]> => {
         const groupedForecasts = new Map<string, Forecast[]>();
@@ -74,13 +72,18 @@ export const Week = () => {
                 {
                     dailyForecasts.map(({ date, maxTemp, minTemp, weather }) => (
                         <li className={ styles.item } key={ date }>
-                            <DayImage name={ weather } />
-                            <div className={ styles.info } >
-                                <p className={ styles.values }>
-                                    <span>{ minTemp }&#176;</span>
-                                    <span>{ maxTemp }&#176;</span>
-                                </p>
-                                <p>{ date }</p>
+                            <div className={ styles.frame }>
+                                <Bevel match />
+                                <DayImage name={ weather } />
+                            </div>
+                            <div className={ styles.content }>
+                                <h2 className={ styles.date }>{ date }</h2>
+                                <div className={ styles.info } >
+                                    <p className={ styles.values }>
+                                        <span>{ minTemp }&#176;</span>
+                                        <span>{ maxTemp }&#176;</span>
+                                    </p>
+                                </div>
                             </div>
                         </li>
                     ))

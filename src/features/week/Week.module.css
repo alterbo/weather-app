@@ -1,18 +1,42 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date {
+    border-bottom: 1px solid lightslategray;
+    font-size: 1.25rem;
+    margin-top: auto;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.frame {
+    border: 1px solid lightslategray;
+    display: grid;
+    position: relative;
+    width: 100%;
+}
+
 .image path {
     fill: none;
-    stroke: darkslategray;
+    stroke: lightslategray;
     width: 100%;
 }
 
 .info {
-    margin-top: auto;
+    margin-bottom: auto;
     text-align: center;
 }
 
 .item {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     justify-content: space-between;
+    padding: 1rem;
+    position: relative;
     width: 100%;
 }
 
@@ -37,4 +61,41 @@
 .week {
     display: grid;
     grid-template-rows: auto 1fr;
+}
+
+@media only screen and (max-width: 42em) {
+    .content {
+        height: 100%;
+        min-width: 50%;
+    }
+
+    .item {
+        border: none;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .date {
+        border-bottom-color: lightgray;
+    }
+
+    .frame {
+        border-color: lightgray;
+    }
+
+    .image path {
+        stroke: darkslategray;
+    }
+
+    .item {
+        border-color: lightgray;
+    }
 }

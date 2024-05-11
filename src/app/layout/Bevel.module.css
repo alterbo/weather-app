@@ -1,0 +1,85 @@
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #242424;
+    border: 1px solid #6f6f6f;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0 20px 0 0;
+    position: absolute;
+    transform-origin: center;
+    z-index: 1;
+}
+
+.circle:nth-child(1) {
+    left: -1px;
+    top: -1px;
+    transform: rotate(-270deg);
+}
+
+.circle:nth-child(2) {
+    right: -1px;
+    top: -1px;
+    transform: rotate(-180deg);
+}
+
+.circle:nth-child(3) {
+    bottom: -1px;
+    left: -1px;
+    transform: rotate(360deg);
+}
+
+.circle:nth-child(4) {
+    bottom: -1px;
+    right: -1px;
+    transform: rotate(270deg);
+}
+
+.overflowcircle {
+    width: 20px;
+    height: 20px;
+    background-color: #242424;
+    border: 1px solid #6f6f6f;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0 20px 0 0;
+    position: absolute;
+    transform-origin: center;
+    z-index: 1;
+}
+
+
+.overflowcircle:nth-child(1) {
+    left: -1px;
+    top: calc(0.625rem - 1px);
+    transform: rotate(-270deg);
+}
+
+.overflowcircle:nth-child(2) {
+    right: -1px;
+    top: calc(0.625rem - 1px);
+    transform: rotate(-180deg);
+}
+
+.overflowcircle:nth-child(3) {
+    bottom: calc(0.625rem - 1px);
+    left: -1px;
+    transform: rotate(360deg);
+}
+
+.overflowcircle:nth-child(4) {
+    bottom: calc(0.625rem - 1px);
+    right: -1px;
+    transform: rotate(270deg);
+}
+
+@media (prefers-color-scheme: light) {
+    .circle {
+        background-color: #fff;
+        border-color: #c9c9c9;
+    }
+    .overflowcircle {
+        background-color: #fff;
+        border-color: #c9c9c9;
+    }
+}

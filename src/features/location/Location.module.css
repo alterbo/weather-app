@@ -6,7 +6,6 @@
 
 .link {
     border: 1px solid #ffffff;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -34,7 +33,6 @@
 .image {
     border: 1px solid #6f6f6f;
     height: 90%;
-    max-width: 760px;
     position: absolute;
     top: 5%;
     width: 100%;
