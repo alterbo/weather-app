@@ -1,21 +1,28 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { locations } from '../location/locations';
-import { data } from './week-mock';
 import styles from './Week.module.css';
 import { DayImage } from './DayImage';
 import { Bevel } from '../../app/layout/Bevel';
+import { observer } from 'mobx-react-lite';
+import { useWeekStore } from '../../app/context/week-context';
+import { DailyForecast, Forecast } from '../../app/models/forecast';
 
-export const Week = () => {
+export const Week = observer(() => {
     const { locationId } = useParams();
     const location = locations.find(location => location.url === locationId);
     if (!location) return <></>
+    const { lat, lon } = location;
 
-    // const { lat, lon } = location;
-    const week = data.list;
+    const { fecthWeek, week } = useWeekStore();
+
+    useEffect(() => {
+        fecthWeek(lat, lon);
+    }, [fecthWeek, lat, lon]);
 
     const groupForecastsByDay = (forecasts: Forecast[]): Map<string, Forecast[]> => {
         const groupedForecasts = new Map<string, Forecast[]>();
-        forecasts.forEach(forecast => {
+        forecasts?.forEach(forecast => {
             const date = new Date(forecast.dt * 1000);
             const dateText = date.toLocaleDateString('es', { weekday: 'long' });
             const dayForecasts = groupedForecasts.get(dateText) || [];
@@ -35,7 +42,7 @@ export const Week = () => {
         return [maxTemp, minTemp];
     };
 
-    const getDominantWeatherCondition = (forecasts: Forecast[]): string => {
+    const getDominantWeatherConditions = (forecasts: Forecast[]): string[] => {
         const weatherCount = new Map<number, number>();
         forecasts.forEach(forecast => {
           forecast.weather.forEach(condition => {
@@ -43,9 +50,9 @@ export const Week = () => {
             weatherCount.set(condition.id, count + 1);
           });
         });
-        const maxCount = Math.max(...Array.from(weatherCount.values()));
-        const dominantWeather = Array.from(weatherCount).find(([_, count]) => count === maxCount);
-        return dominantWeather ? dominantWeather[0].toString() : '';
+        const sortedWeather = Array.from(weatherCount.entries()).sort((a, b) => b[1] - a[1]);
+        const dominantWeather = sortedWeather.slice(0, 3).map(([weatherId]) => weatherId.toString());
+        return dominantWeather;
     };
 
     const groupedForecasts = groupForecastsByDay(week);
@@ -53,9 +60,8 @@ export const Week = () => {
     const dailyForecasts: DailyForecast[] = [];
     groupedForecasts.forEach((dayForecasts, date) => {
         const [maxTemp, minTemp] = getMaxMinTemperature(dayForecasts);
-        const dominantWeather = getDominantWeatherCondition(dayForecasts);
-        const weather = dominantWeather;
-        dailyForecasts.push({ date, maxTemp, minTemp, weather });
+        const dominantWeather = getDominantWeatherConditions(dayForecasts);
+        dailyForecasts.push({ date, maxTemp, minTemp, dominantWeather });
     });
 
     dailyForecasts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
@@ -70,11 +76,15 @@ export const Week = () => {
             </h1>
             <ul className={ styles.list }>
                 {
-                    dailyForecasts.map(({ date, maxTemp, minTemp, weather }) => (
+                    dailyForecasts.map(({ date, maxTemp, minTemp, dominantWeather }) => (
                         <li className={ styles.item } key={ date }>
                             <div className={ styles.frame }>
                                 <Bevel match />
-                                <DayImage name={ weather } />
+                                <div className={ styles.weather }>
+                                    {dominantWeather.map((weather, index) => (
+                                        <DayImage key={index} name={weather} />
+                                    ))}
+                                </div>
                             </div>
                             <div className={ styles.content }>
                                 <h2 className={ styles.date }>{ date }</h2>
@@ -91,4 +101,4 @@ export const Week = () => {
             </ul>
         </div>
     );
-};
+});

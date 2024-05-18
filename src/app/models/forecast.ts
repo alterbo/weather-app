@@ -1,4 +1,4 @@
-interface Forecast {
+export interface Forecast {
   dt: number;
   main: {
     temp: number;
@@ -11,9 +11,14 @@ interface Forecast {
   }[];
 }
 
-interface DailyForecast {
+export interface ForecastApiResponse {
+  cod: string,
+  list: Forecast[],
+}
+
+export interface DailyForecast {
   date: string;
   maxTemp: number;
   minTemp: number;
-  weather: string;
+  dominantWeather: string[];
 }

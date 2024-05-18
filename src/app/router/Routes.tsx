@@ -2,7 +2,7 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import App from '../layout/App';
 import { Location } from '../../features/location/Location';
 import { Today } from '../../features/today/Today';
-import { Week } from '../../features/week/Week';
+import { WeekForecast } from '../../features/week/WeekForecast';
 
 export const routes: RouteObject[] = [
     {
@@ -19,7 +19,7 @@ export const routes: RouteObject[] = [
             },
             {
                 path: 'week/:locationId',
-                element: <Week />,
+                element: <WeekForecast />,
             },
         ],
     }
