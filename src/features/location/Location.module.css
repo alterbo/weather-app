@@ -1,3 +1,7 @@
+.beachimage {
+    transform: translateY(-10%)
+}
+
 .container {
     display: flex;
     justify-content: center;
