@@ -81,13 +81,15 @@
 }
 
 .weather > :nth-child(2) {
-    left: -25%;
-    max-height: 55%;
+    right: 35%;
+    max-height: 200px;
+    width: 100%;
 }
 
 .weather > :nth-child(3) {
-    max-height: 45%;
-    right: -25%;
+    max-height: 165px;
+    left: 35%;
+    width: 100%;
 }
 
 .week {
