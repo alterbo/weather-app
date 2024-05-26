@@ -15,11 +15,14 @@
 .frame {
     border: 1px solid lightslategray;
     display: grid;
+    height: 100%;
+    overflow: hidden;
     position: relative;
     width: 100%;
 }
 
 .image {
+    align-self: end;
     fill: #242424;
 }
 
@@ -45,7 +48,6 @@
 }
 
 .list {
-    align-items: end;
     display: flex;
     gap: 3rem;
     justify-content: space-around;
@@ -75,18 +77,17 @@
 .weather > :nth-child(3) {
     bottom: 0;
     position: absolute;
-    transform: scale(0.425);
-    transform-origin: 50% 100%;
     z-index: -1;
 }
 
 .weather > :nth-child(2) {
-    left: -50%;
+    left: -25%;
+    max-height: 55%;
 }
 
 .weather > :nth-child(3) {
-    right: -50%;
-    transform: scale(0.275);
+    max-height: 45%;
+    right: -25%;
 }
 
 .week {
