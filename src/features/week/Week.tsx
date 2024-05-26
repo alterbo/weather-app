@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { locations } from '../location/locations';
 import styles from './Week.module.css';
-import { DayImage } from './DayImage';
+import { DayImage } from '../../app/layout/DayImage';
 import { Bevel } from '../../app/layout/Bevel';
 import { observer } from 'mobx-react-lite';
 import { useWeekStore } from '../../app/context/week-context';
@@ -14,11 +14,11 @@ export const Week = observer(() => {
     if (!location) return <></>
     const { lat, lon } = location;
 
-    const { fecthWeek, week } = useWeekStore();
+    const { fetchWeek, week } = useWeekStore();
 
     useEffect(() => {
-        fecthWeek(lat, lon);
-    }, [fecthWeek, lat, lon]);
+        fetchWeek(lat, lon);
+    }, [fetchWeek, lat, lon]);
 
     const groupForecastsByDay = (forecasts: Forecast[]): Map<string, Forecast[]> => {
         const groupedForecasts = new Map<string, Forecast[]>();

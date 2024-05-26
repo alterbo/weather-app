@@ -15,7 +15,9 @@ export const LocationImage = ({ name }: Props) => {
     };
     return (
         <svg className={ styles.image } preserveAspectRatio="xMinYMid slice" viewBox="0 0 844 390" xmlns="http://www.w3.org/2000/svg">
-            { imageMap[name] }
+            <g className={ styles.imagegroup }>
+                { imageMap[name] }
+            </g>
         </svg>
     );
 }

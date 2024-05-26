@@ -1,5 +1,6 @@
 import { makeObservable, observable, runInAction } from "mobx";
 import { Forecast, ForecastApiResponse } from "../models/forecast";
+import { apiKey, baseURL } from "../api/api";
 
 export class WeekStore {
     week: Forecast[] = [];
@@ -10,8 +11,8 @@ export class WeekStore {
         })
     }
 
-    fecthWeek = async (lat: number, lon: number) => {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.VITE_OPENWEATHER_API_KEY}&units=metric`);
+    fetchWeek = async (lat: number, lon: number) => {
+        const response = await fetch(`${baseURL}/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
         const data: ForecastApiResponse = await response.json();
         runInAction(() => this.week = data.list);
     }

@@ -45,6 +45,7 @@
 }
 
 .list {
+    align-items: end;
     display: flex;
     gap: 3rem;
     justify-content: space-around;

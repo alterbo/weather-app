@@ -1,11 +1,11 @@
-import { Atmosphere } from "../../app/weather-conditions/Atmosphere";
-import { Clear } from "../../app/weather-conditions/Clear";
-import { Clouds } from "../../app/weather-conditions/Clouds";
-import { Drizzle } from "../../app/weather-conditions/Drizzle";
-import { Rain } from "../../app/weather-conditions/Rain";
-import { Snow } from "../../app/weather-conditions/Snow";
-import { Thunderstorm } from "../../app/weather-conditions/Thunderstorm";
-import styles from './Week.module.css';
+import { Atmosphere } from "../weather-conditions/Atmosphere";
+import { Clear } from "../weather-conditions/Clear";
+import { Clouds } from "../weather-conditions/Clouds";
+import { Drizzle } from "../weather-conditions/Drizzle";
+import { Rain } from "../weather-conditions/Rain";
+import { Snow } from "../weather-conditions/Snow";
+import { Thunderstorm } from "../weather-conditions/Thunderstorm";
+import styles from '../../features/week/Week.module.css';
 
 interface Props {
     name: string;
