@@ -1,0 +1,125 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --c-bg: hsl(0 0% 14%);
+  --c-fg: hsla(0 0% 100% / 0.87);
+  --c-fg-strong: hsl(0 0% 100%);
+
+  --c-surface: var(--c-bg);
+
+  --c-surface-contrast: var(--c-fg-strong);
+
+  --c-border: hsl(210 14% 53%);
+  --c-border-strong: hsl(0 0% 44%);
+
+  --c-stroke: var(--c-border);
+
+  --c-stroke-soft: hsl(0 0% 83%);
+
+  --c-link: hsl(237 100% 70%);
+  --c-link-hover: hsl(237 86% 64%);
+
+  --c-button-bg: hsl(0 0% 10%);
+
+  color-scheme: light dark;
+  color: var(--c-fg);
+  background-color: var(--c-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: var(--c-link);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--c-link-hover);
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-width: 320px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--c-button-bg);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--c-link);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--c-link);
+}
+
+#app {
+  inline-size: 100%;
+}
+
+.main-container {
+  display: grid;
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+  grid-template-rows: auto 1fr;
+  min-height: 100svh;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-bg: hsl(0 0% 100%);
+    --c-fg: hsl(208 37% 20%);
+    --c-fg-strong: hsl(208 37% 20%);
+
+    --c-surface: hsl(0 0% 100%);
+    --c-surface-contrast: hsl(208 37% 20%);
+
+    --c-border: hsl(0 0% 83%);
+    --c-border-strong: hsl(0 0% 79%);
+
+    --c-stroke: hsl(180 25% 25%);
+    --c-stroke-soft: hsl(0 0% 83%);
+
+    --c-link-hover: hsl(237 100% 73%);
+
+    --c-button-bg: hsl(0 0% 98%);
+  }
+  a:hover {
+    color: var(--c-link-hover);
+  }
+  button {
+    background-color: var(--c-button-bg);
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
