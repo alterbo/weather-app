@@ -5,7 +5,7 @@
 	import Bevel from '../layout/Bevel.svelte';
 
 	import { locations } from '../location/locations';
-	import { apiKey, baseURL } from '../../../lib/api/api';
+	import { baseURL } from '../../../lib/api/api';
 	import type { Today as TodayModel, TodayApiResponse } from '../../types/today';
 	import { route } from '../../store/router';
 
@@ -19,16 +19,11 @@
 	$: lon = location?.lon;
 
 	const fetchToday = async (latitude: number, longitude: number) => {
-		if (!apiKey) {
-			error = 'Missing VITE_OPENWEATHER_API_KEY';
-			return;
-		}
-
 		loading = true;
 		error = undefined;
 		try {
 			const response = await fetch(
-				`${baseURL}/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+				`${baseURL}/weather?lat=${latitude}&lon=${longitude}&units=metric`
 			);
 			const data: TodayApiResponse = await response.json();
 			today = data;

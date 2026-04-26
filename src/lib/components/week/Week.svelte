@@ -1,7 +1,7 @@
 <script lang="ts">
 	import styles from './Week.module.css';
 	import { locations } from '../location/locations';
-	import { apiKey, baseURL } from '../../../lib/api/api';
+	import { baseURL } from '../../../lib/api/api';
 	import type { DailyForecast, Forecast, ForecastApiResponse } from '../../../lib/types/forecast';
 	import Bevel from '../layout/Bevel.svelte';
 	import DayImage from '../layout/DayImage.svelte';
@@ -15,9 +15,8 @@
 	$: lon = location?.lon;
 
 	const fetchWeek = async (latitude: number, longitude: number) => {
-		if (!apiKey) return;
 		const response = await fetch(
-			`${baseURL}/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+			`${baseURL}/forecast?lat=${latitude}&lon=${longitude}&units=metric`
 		);
 		const data: ForecastApiResponse = await response.json();
 		week = data.list;
