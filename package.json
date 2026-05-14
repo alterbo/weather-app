@@ -12,11 +12,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@netlify/functions": "^5.2.0",
+    "@netlify/functions": "^5.2.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.12.2",
-    "netlify-cli": "^25.6.0",
+    "netlify-cli": "^26.0.1",
     "svelte": "^5.55.1",
     "svelte-check": "^4.4.6",
     "typescript": "~5.9.3",
